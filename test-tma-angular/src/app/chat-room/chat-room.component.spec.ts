@@ -6,8 +6,8 @@ describe('ChatRoomComponent', () => {
   let component: ChatRoomComponent;
   let fixture: ComponentFixture<ChatRoomComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [ ChatRoomComponent ]
     })
     .compileComponents();

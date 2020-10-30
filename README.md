@@ -24,7 +24,7 @@ don't worry, making your best is the unique requirement
 * Port: 3000
 * API swagger : run the server and ask the endpoints `api-docs`
 * User test: `{login:'test', password:'test', uid:'test'}`
-* Cors white list : `[ 'http://localhost:4200', 'http://localhost:3001']` if you want to change it, modified it in `cors.config.js`
+* Cors white list : `[ 'http://localhost:4200', 'http://localhost:3000']` if you want to change it, modified it in `cors.config.js`
 
 There is no connection with a DB, so it's fake data. If you stop and run again the server the data will be empty.
 There is an auth security, you have to set Authorization with `Bearer {uid}` to access endpoints which are not `auth`
@@ -37,4 +37,10 @@ The two events for Socket.io are `'users'` and `'messages'`
 Run `npm i` in the server's folder and also in angular's folder.
 
 If you find a bug don't hesitate to write me.
+
+### Before Updating
+Make sure you are using Node 10.13 or later
+Run ng update @angular/core@8 @angular/cli@8 in your workspace directory to update to the latest 8.x version of @angular/core and @angular/cli and commit these changes.
+then  Run ng update @angular/core @angular/cli which should bring you to version 10 of Angular.
+
 
