@@ -1,0 +1,27 @@
+
+
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2>Application<br> Login Page</h2>
+        <p>Login or register from here to access.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+                <mat-form-field>
+                    <input type="text" class="form-control" matInput placeholder="Username" formControlName="username">
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" class="form-control" matInput placeholder="Password"
+                        formControlName="password">
+                </mat-form-field>
+                <div class="form-group">
+                    <button type="submit" mat-button class="btn btn-black">Login</button>
+                    <button type="submit" mat-button (click)="signUp()" class="btn btn-secondary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

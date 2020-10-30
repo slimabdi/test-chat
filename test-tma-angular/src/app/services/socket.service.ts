@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {UsersService} from "./users.service";
-import {MessagesService} from "./messages.service";
-import {mergeAll, tap} from "rxjs/operators";
-import {Socket} from "ngx-socket-io";
-import {combineLatest, merge} from "rxjs";
+import {UsersService} from './users.service';
+import {MessagesService} from './messages.service';
+import {mergeAll, tap} from 'rxjs/operators';
+import {Socket} from 'ngx-socket-io';
+import {combineLatest, merge} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class SocketService {
     return combineLatest([
       this._getUsers(),
       this._getMessages()
-    ])
+    ]);
   }
 
   private _getUsers() {
@@ -29,15 +29,19 @@ export class SocketService {
       .pipe(
         tap(users => {
           console.log(users);
-          this._userService.setUsers(users)
+          this._userService.setUsers(users);
         })
-      )
+      );
   }
 
   private _getMessages() {
    return  this._socket.fromEvent('messages')
       .pipe(
         tap(messages => this._messagesService.setMessages(messages))
-      )
+      );
+  }
+
+  emit(eventName: string, data?: any) {
+    return this._socket.emit(eventName, data);
   }
 }

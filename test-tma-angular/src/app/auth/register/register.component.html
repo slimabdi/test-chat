@@ -1,0 +1,73 @@
+<!-- <form [formGroup]="userRegistrationForm"  (ngSubmit)="onFormSubmit()" novalidate>
+
+    <mat-form-field>
+        <input matInput placeholder="Full name" type="text" formControlName="firstName">
+        <mat-error>
+            {{fval.firstName.errors}}
+        </mat-error>
+    </mat-form-field>
+
+    <div >
+        <mat-form-field>
+            <input matInput placeholder="Password" type="password" formControlName="password">
+            <mat-error>
+                {{fval.password.errors}}
+            </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="Confirm password" type="password" formControlName="confirmPassword">
+            <mat-error>
+                {{fval.password.errors}}
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button [disabled]="userRegistrationForm.invalid">Register</button>
+    <a mat-button (click)="logIn()">Log in</a>
+</form> -->
+
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            <h3>Welcome</h3>
+            <p>Chat room with live data.</p>
+            <a mat-button (click)="logIn()">Log in</a> <br/>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                        <form [formGroup]="userRegistrationForm" class="row register-form" (ngSubmit)="onFormSubmit()" novalidate>
+                        <div class="col-md-6">
+                            <mat-form-field>
+                                <input matInput placeholder="Full name" type="text" formControlName="firstName">
+                                <mat-error>
+                                    {{fval.firstName.errors}}
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Password" type="password" formControlName="password">
+                                <mat-error>
+                                    {{fval.password.errors}}
+                                </mat-error>
+                            </mat-form-field>
+                        
+                            <mat-form-field>
+                                <input matInput placeholder="Confirm password" type="password" formControlName="confirmPassword">
+                                <mat-error>
+                                    {{fval.password.errors}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <button mat-raised-button lass="btnRegister" [disabled]="userRegistrationForm.invalid">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
